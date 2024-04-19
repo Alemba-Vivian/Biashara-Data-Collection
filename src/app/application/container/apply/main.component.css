@@ -1,0 +1,758 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.blur {
+  filter: blur(6px); /* Adjust the blur intensity as needed */
+ 
+}
+#guidelinesheader{
+  background-color: #e6e5e5;
+  
+}
+#guidelinesheader p{
+  font-weight: bold; 
+  color: #003d1e;
+  font: 20px;
+  margin: 0 auto;
+  text-align: center;
+
+}
+
+
+/* Styles for screens smaller than 768px (tablets and below) */
+/* Styles for screens smaller than 768px (phones) */
+  
+/* Styles for screens smaller than 768px (phones) */
+@media (max-width: 768px) {
+  .guidelines {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 80%;
+    height: 90%;
+    padding: 20px; /* Adjust padding as needed */
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    z-index: 1000;
+    overflow-y: auto; /* Enable vertical scrolling if content exceeds screen height */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+    border-radius: 0; /* Remove border radius */
+  }
+
+  .headerguideline {
+    margin: 0 auto; /* Center horizontally */
+    text-align: center;
+  }
+
+  .headerguideline p {
+    margin: 0; /* Remove margin */
+    font-weight: bold;
+    font-size: 18px; /* Adjust font size */
+  }
+  .formnavbar
+  {
+    background-color:white
+  }
+  .mergedlogo {
+    width: 80%; /* Adjust logo size */
+    max-height: 130px;
+    margin: 10px auto; /* Center horizontally with some margin */
+    display: block;
+  }
+
+  .green-button {
+    width: 100%; /* Make button full width */
+    margin-top: 20px; /* Add some space between button and content */
+  }
+}
+
+.headerguideline p
+{
+margin:0, auto;
+text-align:center;
+font-weight:bold
+}
+.guideline-container{
+  background-color: #e6e5e5;
+ 
+}
+#guide{
+  background-color: #e6e5e5;
+  color: #003d1e;
+}
+
+
+.welcome
+{
+font-weight: bold ;
+}
+
+.mergedlogo
+{
+  width: 100%;
+  max-height: 100px;
+  padding:0;
+  
+}
+
+
+
+
+
+
+
+
+
+.guidelinescounty
+{
+  margin-right: 30px;
+}
+.columnguidelines {
+  display: flex;
+  align-items: last baseline; /* Center items vertically */
+  justify-content:right;
+  /* flex-direction: column; */
+   /* Stack items vertically */
+  color:green
+}
+
+
+/* Styles for screens smaller than 768px (tablets and below) */
+@media (max-width: 768px) {
+  .guidelinesform {
+    padding: 20px; /* Decrease padding for smaller screens */
+  }
+}
+
+/* Styles for screens larger than 768px (desktops and above) */
+@media (min-width: 768px) {
+  .guidelinesform {
+    padding: 20px; /* Keep padding as 20px for larger screens */
+  }
+}
+.guidelinesheader {
+  max-width:1140px;
+  max-height: 100px;
+  background-color: #e6e5e5;
+  
+}
+
+
+
+
+
+
+
+.guide-container-image{
+  padding-top: 30px;
+  padding-right: 20px;
+}
+.venturepal-icon{
+  margin-right: 5px;
+}
+
+
+
+.green-button {
+  background-color: green;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  align-self: flex-end; /* Align the button to the end of the flex container */
+  margin-top: 20px; /* Add some space between the button and the content */
+  cursor: pointer;
+}
+
+.columnguidelines guidek {
+  margin-bottom: 10px; /* Add space below the image */
+}
+
+.columnguidelines h4 {
+  font-weight: bold; /* Make the text bold */
+}
+.guidelinesheader
+{
+  padding: 0;
+}
+
+
+/* .guidelinesheader p {
+  font-weight: bold; 
+  color: #003d1e;
+  font: 20px;
+  margin: 0 auto;
+  text-align: center;
+  
+} */
+
+.guidelinesventurepal {
+  display: block; /* Display the image as a block-level element */
+  margin-top: 10px; /* Add space between the h4 and the second image */
+}
+
+
+.guidelines {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0,0,0,0.8);
+  padding: 20px;
+  z-index: 1000; 
+  color: white;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+  border-radius: 10px; 
+
+}
+
+.guidelinesform {
+  max-width: 1140px; /* Adjust width as needed */
+  margin: 0 auto; /* Center horizontally within the guidelines div */
+  display: flex;
+  flex-direction: column;
+    
+
+}
+
+.guidelinesform p
+{
+  font-size: 16px;
+}
+
+
+
+
+
+
+
+
+
+
+.container{
+  max-width: 1140px;
+  /* width: 1000px; */
+  /* padding-top: 10px; */
+}
+
+.row{
+  /* background-color: black;
+  min-height: 100vh;
+  opacity: 0.7;
+  padding-bottom: 30px; */
+
+  font-family: Roboto,"Helvetica Neue", sans-serif; 
+  background: url('/assets/one.jpg');
+  background-position: center;
+  background-size: cover;
+  min-height: 100vh;
+  background-repeat:no-repeat; 
+ 
+  /* background-color: #003d1e; */
+
+  
+}
+.guidelines p
+{
+  padding : 10px;
+}
+.form-container-wrapper{
+  background-color:#003d1e;
+  min-height: 100vh;
+  opacity: 0.94;
+  padding-bottom: 30px;
+
+}
+.fieldset-container-wrapper{
+ /* background-color: white; */
+ 
+}
+.nav{
+  /* background-color: #e6e5e5; */
+  background-color: #003d1e;
+  opacity: 0.95;
+  
+ 
+ 
+
+}
+.nav-wrapper{
+  background-color: #e6e5e5;
+  display: flex;
+  width: 80%;
+  margin: 0 10%;
+  flex-wrap: wrap;
+
+}
+
+.mergedlogoform
+{
+  width: 100%;
+  /* max-height: 150px;
+  padding:0; */
+  
+
+}
+
+
+
+
+
+
+.nav  p{
+  margin: 0 auto; /* Center horizontally */
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+  color: #003d1e;
+  /* margin-top: 5px; */
+
+}
+
+.titleContainer{
+  display: flex;
+  width: 100%;
+  justify-content: space-between; 
+  align-items:first baseline;
+  padding: 4px;
+  gap: 10px;
+  /* gap: 40px; */
+  /* width: 80%;  */
+  /* margin: 0 10%;  */
+
+}
+
+
+.biashara-program-title{
+ 
+ 
+}
+.iem:last-child{
+  text-align: right;
+}
+
+.venturepal{
+  text-align: center;
+}
+
+.nairobi-image-container{
+  margin-left: 20px;
+  padding: 8px;
+}
+
+.venturepal-image-container{
+  padding: 8px;
+ 
+}
+
+
+.title-program{
+  color: green;
+  font-weight: bolder;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+
+.powered-by{
+  float: right;
+  color: #003d1e;
+
+
+}
+
+
+
+#msform {
+  text-align: center;
+  position: relative;
+  padding-top: 20px;
+ 
+  /* margin-top: 30px; */
+
+}
+#msform fieldset {
+  /* background:  rgba(255, 255, 255, 0.2); */
+  background: #e6e5e5;
+  border: 0 none;
+  border-radius: 0px;
+  box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+  padding: 20px 30px;
+  /* box-sizing: border-box; */
+  width: 80%;
+  margin: 0 10%;
+  /*stacking fieldsets above each other*/
+  margin-bottom: 0;
+  position: relative;
+}
+/*Hide all except first fieldset*/
+#msform fieldset:not(:first-of-type) {
+  display: none;
+}
+/*inputs*/
+
+
+
+input[type="file"]{
+  border: none;
+}
+
+#msform input, #msform textarea{
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 0px;
+  background-color: white;
+  margin-bottom: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: montserrat;
+  /* color: #2C3E50; */
+  color: black;
+  font-size: 13px;
+}
+
+
+
+#msform input:focus, #msform textarea:focus {
+  -moz-box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+  border: 1px solid orange;
+  outline-width: 0;
+  transition: All 0.5s ease-in;
+  -webkit-transition: All 0.5s ease-in;
+  -moz-transition: All 0.5s ease-in;
+  -o-transition: All 0.5s ease-in;
+}
+
+/* radio buttons */
+mat-radio-group{
+  margin-bottom: 30px;
+}
+
+
+
+
+
+
+
+/*buttons*/
+#msform .action-button {
+  width: 100px;
+  background: #FBE116;
+  font-weight: bold;
+  color: white;
+  /* color: black; */
+  border: 0 none;
+  border-radius: 25px;
+  cursor: pointer;
+  padding: 10px 5px;
+  margin: 10px 5px;
+  text-align: center;
+}
+
+#msform .action-submit{
+  width: 100px;
+  background: green;
+  font-weight: bold;
+  color: white;
+  border: 0 none;
+  border-radius: 25px;
+  cursor: pointer;
+  padding: 10px 5px;
+  margin: 10px 5px;
+
+}
+
+#msform .action-submit:hover, #msform .action-submit:focus {
+  box-shadow: 0 0 0 2px white, 0 0 0 3px #e6e5e5;
+}
+
+
+
+
+#msform .action-button:hover, #msform .action-button:focus {
+  box-shadow: 0 0 0 2px white, 0 0 0 3px #e6e5e5;
+}
+#msform .action-button-previous {
+  width: 100px;
+  background: grey;
+  font-weight: bold;
+  color: white;
+  border: 0 none;
+  border-radius: 25px;
+  cursor: pointer;
+  padding: 10px 5px;
+  margin: 10px 5px;
+}
+#msform .action-button-previous:hover, #msform .action-button-previous:focus {
+  box-shadow: 0 0 0 2px white, 0 0 0 3px #C5C5F1;
+}
+/*headings*/
+.fs-title {
+  font-size: 18px;
+  /* text-transform: uppercase; */
+  /* color: #2C3E50; */
+  color: #003d1e;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+  font-weight: bold;
+}
+.fs-subtitle {
+  font-weight: normal;
+  font-size: 14px;
+  /* color: #666; */
+  color: #003d1e;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+/*progressbar*/
+#progressbar {
+  margin-bottom: 20px;
+  overflow: hidden;
+  /*CSS counters to number the steps*/
+  counter-reset: step;
+}
+#progressbar li {
+  list-style-type: none;
+  color: white;
+  text-transform: uppercase;
+  font-size: 9px;
+  width: 33.33%;
+  float: left;
+  position: relative;
+  letter-spacing: 1px;
+}
+#progressbar li:before {
+  content: counter(step);
+  counter-increment: step;
+  width: 24px;
+  height: 24px;
+  line-height: 26px;
+  display: block;
+  font-size: 12px;
+  /* color: #333; */
+  color: lightgray;
+  background: white;
+  border-radius: 25px;
+  margin: 0 auto 10px auto;
+}
+/*progressbar connectors*/
+#progressbar li:after {
+  content: '';
+  width: 100%;
+  height: 2px;
+  /* background: white; */
+  background: #e6e5e5;
+  position: absolute;
+  left: -50%;
+  top: 9px;
+  z-index: -1; /*put it behind the numbers*/
+}
+#progressbar li:first-child:after {
+  /*connector not needed before the first step*/
+  content: none;
+}
+/*marking active/completed steps green*/
+/*The number of the step and the connector before it = green*/
+#progressbar li.active:before, #progressbar li.active:after {
+  background: #FBE116;
+  color: white;
+}
+#progressbar li.inactive:before{
+  /* background: burlywood; */
+  background-color: #e6e5e5;
+  color: #000;
+}
+fieldset {
+ /* for chrome and safari*/
+-webkit-animation-duration: .25ms;-webkit-animation-name: slidein;
+ /*for firefox*/
+-moz-animation-duration: 1s;-moz-animation-name: slidein;
+ /* for opera*/
+ -o-animation-duration: 1s;-o-animation-name: slidein;
+/* Standard syntax*/
+    animation-duration: 1s;animation-name: slidein;
+}
+ @-webkit-keyframes slidein {
+      from { margin-right:100%;width:300%;}
+      to { margin-right: 0%;width: 100%;           }
+}
+@-moz-keyframes slidein {
+         from {
+             margin-left: 100%;width: 300%;
+         }
+         to {
+             margin-left: 0%; width: 100%;
+         }
+  }
+@-o-keyframes slidein {
+         from {
+             margin-left: 100%;width: 300%;
+         }
+         to {
+             margin-left: 0%;width: 100%;
+         }
+}
+@keyframes slidein {
+         from {
+             margin-left: 100%;width: 300%;
+         }
+         to {
+             margin-left: 0%;width: 100%;
+         }
+}
+
+
+/* styling the required fields when input field is empty */
+.fieldInputEmpty{
+   color: red;
+   font-size: 14px;
+   font-weight: bold;
+   /* padding: 20px; */
+   /* text-align: left; */
+   margin-top: 10px;
+   margin-bottom: 10px;
+}
+
+
+
+
+/* styling the radio buttons to align vertically */
+.gender{
+
+}
+.radio-group-options{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border: none;
+}
+.mat-radio-button {
+  outline: none !important;
+}
+.mat-radio-button:focus{
+  outline: none !important;
+}
+.mat-radio-ripple {
+  display: none !important;
+}
+
+.radio-button-title{
+  font-weight: normal;
+  font-size: 14px;
+  color: #003d1e;
+  margin-bottom: 20px;
+  margin-top: 10px;
+  text-align: left;
+  line-height: 1.6;
+
+}
+#file-upload{
+  border: none;
+}
+
+
+/* styling mat form field */
+.matFormField{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* checkboxes */
+.checkboxContainer{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.matFormInput{
+  padding: 15px;
+  /* border: 1px solid #ccc; */
+  border-radius: 0px;
+  margin-bottom: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: montserrat;
+  /* color: #2C3E50; */
+  color: black;
+  font-size: 13px;
+}
+
+html, body { height: 100%; }
+
+
+
+
+
+
+
+.ng-select-material{
+  /* @import "../node_modules/@ng-select/ng-select/themes/default.theme.css"; */
+  text-align: left;
+ 
+}
+
+
+.more-text{
+  font-weight: normal;
+  font-size: 14px;
+  margin-top: 10px;
+  /* color: #666; */
+  color: #003d1e;
+  margin-bottom: 20px;
+  text-align: left;
+  line-height: 1.6;
+
+}
+
+
+.counties{
+  margin-bottom: 30px;
+}
+
+span{
+  font-weight: bolder;
+}
+
+
+
+/* media query */
+@media screen and (max-width: 768px) {
+  #msform fieldset {
+    width: 100%;
+    margin: 0;
+  }
+  .titleContainer{
+     flex-wrap: wrap;
+     width: 100%;
+     margin: 0;    
+  }
+  .hustler{
+    width: 500px;
+    height: 100px;
+  }
+
+  .item:last-child{
+    float: right;
+  }
+  .fs-title{
+    font-size: 14px;
+  }
+  .guidelinesheader{
+    display: hidden;
+
+  }
+  .nav-wrapper{
+    width: 100%;
+    margin: 0;
+  }
+}
+
+
+
+

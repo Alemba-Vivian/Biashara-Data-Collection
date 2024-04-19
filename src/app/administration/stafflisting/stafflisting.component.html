@@ -1,0 +1,117 @@
+<div class="animated fadeIn">
+    <div class="card">
+      <div class="card-header site-btn-success-dark">
+        <strong>Staff Listing</strong>
+        <span class="pointer float-end text-white" (click)="back_btn()">
+          <span class="fa fa-arrow-left   " ></span>
+          &nbsp;<b>Back</b>
+       </span>
+      </div>
+      <div class="card-body">
+        <div class="col-12 mt-1 mb-4" *ngxPermissionsExcept="['VIEWER']">
+          <button type="button" class="btn btn-block btn-success text-white" (click)="add_user()"><i
+              class="fa fa-plus"></i> Add New User</button>
+          <button type="button" class="btn btn-block btn-success text-white mx-2" (click)="uploadUsersModal.show()"><i
+                class="fa fa-upload"></i> Bulk Upload Users</button>
+        </div>
+
+        <form [formGroup]="searchForm">
+        <div class="row">
+         
+          <div class="form-group col-sm-6">
+            <label for="country fw-bold"> <strong>Email / Name</strong></label>
+            <input type="text" class="form-control mt-2"  formControlName="search_value" placeholder="Enter Search Value">
+          </div>
+          <div class="form-group col-sm-3">
+            <label for="country">&nbsp;&nbsp;</label>
+            <button type="button" class="btn text-white  form-control  btn-success btn-md mt-2" (click)="filterusers()" > <i
+                class="fa fa-search"></i> Search </button>
+          </div>
+       
+        </div>
+      </form>
+        <br>
+       
+  
+        <table
+          class="table table-bordered table-striped table-sm row-border hover" style="width:100%">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Account Status</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody *ngIf="records?.length != 0">
+            <tr *ngFor="let recordinstance of records; let i = index">
+              <td>{{i + 1}}</td>
+              <td>{{ recordinstance.first_name }}</td>
+              <td>{{ recordinstance.last_name }}</td>
+
+              <td>
+               
+                <div *ngIf="recordinstance.is_suspended == 'True'">
+                  <span class="badge bg-danger">
+                    Suspended
+                    </span>
+                </div>
+                <div *ngIf="recordinstance.is_suspended == 'False'">
+                  <span class="badge bg-success">
+                    Active
+                    </span>
+                </div>
+              </td>
+             
+             <td>
+                <button type="button" class="btn btn-success  btn-sm " (click)="viewdetails(recordinstance.id)"> <i
+                    class="fa fa-eye text-white"></i> </button>
+                
+              </td> 
+  
+            </tr>
+          </tbody>
+          <tbody *ngIf="records?.length == 0">
+            <tr>
+              <td colspan="9" class="no-data-available">No records to show</td>
+            </tr>
+          <tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div bsModal #uploadUsersModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog border-success modal-dialog-scrollable modal-success" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-white site-btn-success-dark m-0 p-2">
+        <h6 class="modal-title">Attach File</h6>
+        <button type="button" class="close btn text-white site-btn-success-dark m-0 p-0" (click)="uploadUsersModal.hide()" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group mb-4 mt-2">
+            <label for="evidence" class="control-label fw-bold mb-2">
+              Upload attachment file (csv)
+            </label>
+            <div class="">
+              <input id="evidence"  type="file" multiple class="form-control" (change)="handleFileupload($event)"/>                                 
+            </div>
+          </div>         
+        </form>
+      </div>
+      
+      <div class="modal-footer">
+        <!-- <button   class="btn btn-warning col-md-4 text-white" (click)="resetForm()">Reset</button> -->
+        <button  type="submit"  (click)="upload_users()" class="btn site-btn-success col-md-4 text-white"><i class="fa fa-cloud-upload"></i> Upload</button>
+      
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+  
+  

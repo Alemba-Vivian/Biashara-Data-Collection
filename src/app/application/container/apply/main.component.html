@@ -1,0 +1,602 @@
+<div class="guidelines" *ngIf="showGuidelines">
+    <form [formGroup]="guidelines" id="guidelinesid" class="guidelinesform">
+        <div id="guide" class="headerguideline">
+            <img  class="mergedlogo"src="/assets/image1.png"  > 
+            <p>BIASHARA STIMULUS PROGRAM</p>
+        </div>
+           <br>
+        <p>
+            <span class="welcome">WELCOME!</span> <br><br>The Biashara Stimulus Program is a revolving fund established to support small and medium-sized enterprises (SMEs) within Nairobi City County.It aims to empower entrepreneurs, facilitate growth, and break down barriers to capital for micro, small, and medium businesses.<br>This is a data collection form for Biashara Stimulus Program for Micro and Small Enterprises here in Nairobi city county .</p>
+            
+           
+     
+       <p>To get started read the <a href="https://drive.google.com/file/d/1t-D5_HCcweicPZvzfTWhajNldqEY-ogM/view?usp=drive_link"  target="_blank">guidelines</a> and prepare the required information
+        </p> 
+        <input class="green-button" type="submit" value="Continue" name="Continue" (click)="applyGuidelinesblur()">
+    </form>
+</div>
+
+<!-- start -->
+<div class="row" [ngClass]="{ 'blur': showGuidelines }">
+
+            <div class="nav">
+                <div class="nav-wrapper">
+                    <img  class="mergedlogoform"src="/assets/image1.png"  >
+                    <p>BIASHARA STIMULUS PROGRAM</p>
+                </div>
+
+              
+            </div>
+               
+          
+    
+  <div class="col-md-12 col-md-offset-3  ">
+    <div class="form-container-wrapper">
+      <form [formGroup]="personalDetails" id="msform">
+        
+          <!-- progressbar -->
+
+          <ul id="progressbar">
+              <li [ngClass]="step>=1 ? 'active ' : 'inactive'">Personal Details</li>
+              <li [ngClass]="step>=2 ? 'active' : 'inactive'">Business(Individual)</li>
+              <li [ngClass]="step==3 ? 'active' : 'inactive'">Business(Group/Organization)</li>
+          </ul>
+
+          <!-- fieldsets -->
+          <ng-container *ngIf="step ==1">
+          <fieldset  class="fieldset-container-wrapper">
+              <h2 class="fs-title">Personal Details <span class="fs-title">*</span></h2>
+              <input type="text" formControlName="fullName" placeholder="Full Names" />
+              <input type="number" formControlName="identificationNumber" placeholder="Identification Number" />
+              <div class="gender">
+                  <h4 class="fs-subtitle radio-button-title">Gender</h4>
+                  <mat-radio-group formControlName="gender" class="radio-group-options" aria-label="Select an option">
+                      <mat-radio-button class="mat-radio-button" value="male">Male</mat-radio-button>
+                      <mat-radio-button  class="mat-radio-button" value="female">Female</mat-radio-button>
+                      <mat-radio-button  class="mat-radio-button" value="other">Other</mat-radio-button>
+                  </mat-radio-group>
+          
+                  <div class="matFormInput" *ngIf="personalDetails.get('gender')?.value === 'other'">
+                      <input formControlName="other_gender" placeholder="Other">
+                  </div>
+              </div>
+
+              <div class="disability-status">
+                  <h4 class="fs-subtitle radio-button-title">Disability Status</h4>
+                  <mat-radio-group formControlName="disabilityStatus" class="radio-group-options" aria-label="Select an option">
+                      <mat-radio-button value="yes">Yes</mat-radio-button>
+                      <mat-radio-button value="no">No</mat-radio-button>
+                  </mat-radio-group>
+              </div>
+
+              <div class="ageGroup">
+                <h4 class="fs-subtitle radio-button-title">Age Group</h4>
+                <mat-radio-group formControlName="ageGroup" class="radio-group-options" aria-label="Select an option">
+                    <mat-radio-button class="mat-radio-button" value="18-25">18-25</mat-radio-button>
+                    <mat-radio-button  class="mat-radio-button" value="26-35">26-35</mat-radio-button>
+                    <mat-radio-button  class="mat-radio-button" value="36-45">36-45</mat-radio-button>
+                    <mat-radio-button  class="mat-radio-button" value="46-55">46-55</mat-radio-button>
+                    <mat-radio-button  class="mat-radio-button" value="above 56">above 56</mat-radio-button>
+                </mat-radio-group>
+              </div>
+          
+              <input type="email" formControlName="email" placeholder="Email" />
+              <input type="number" formControlName="phoneNumber" placeholder="Phone Number" />
+          
+              <div class="photo-upload">
+                  <h4 class="fs-subtitle radio-button-title">Upload your passport photo</h4>
+                  <input formControlName="passportPhoto" class="file-upload" type="file" (change)="handleFileupload($event,'passportPhoto')">
+          
+                  <h4 class="fs-subtitle radio-button-title">Upload a copy of your National ID</h4>
+                  <input formControlName="nationalIDPhoto" class="file-upload" type="file" (change)="handleFileupload($event,'nationalIDPhoto')">
+              </div>
+
+              <input (click)="next()" type="button" name="next" class="next action-button" value="Next"/> 
+              <div class="powered-by"><small>powered by </small> <div><img src="/assets/DoITinKenya_logo.png" alt=""  width="100px" ></div> </div>
+
+          </fieldset>
+        </ng-container>
+          </form>
+
+
+      <form [formGroup]="businessIndivual" id="msform">
+
+          <!-- fieldsets -->
+          <ng-container *ngIf="step ==2">
+          <fieldset >
+              <h2 class="fs-title">Business Specifics (Individual) <span class="fs-title">*</span></h2>
+              <!-- <h4 class="fs-subtitle radio-button-title">What is your Business Name</h4> -->
+
+              <input type="text" formControlName="businessName" placeholder="Business Name">
+              <input type="text" formControlName="businessPermitNumber" placeholder="Business Permit Number">
+              <input type="text" formControlName="licenseNumber" placeholder="License Number">
+
+              <div>
+                <h4 class="fs-subtitle radio-button-title">Upload your License Certificate</h4>
+                  <input formControlName="licensePhoto" class="file-upload" type="file" (change)="handleFileupload($event,'licensePhoto')">
+              </div>
+          
+              <div class="businessRegisteration">
+                  <h4 class="fs-subtitle radio-button-title">Is your business registered</h4>
+                  <mat-radio-group formControlName="isbusinessRegistered" class="radio-group-options"
+                      aria-label="Select an option">
+                      <mat-radio-button value="yes">Yes</mat-radio-button>
+                      <mat-radio-button value="no">No</mat-radio-button>
+                  </mat-radio-group>
+              </div>
+              
+
+      
+          
+              <div class="registerationCertificate"  *ngIf="businessIndivual.get('isbusinessRegistered')?.value === 'yes'">
+                  <h4 class="fs-subtitle radio-button-title">If yes attach the certificate of registration</h4>
+                  <input formControlName="registrationCertificate" class="file-upload" type="file" (change)="handleFileupload($event,'registrationCertificate')">
+                  <input formControlName="individualRegCertNo" type="text" placeholder="Certificate Number">
+                  </div>
+
+              <div class="explainwhy" *ngIf="businessIndivual.get('isbusinessRegistered')?.value === 'no'" >
+                  <h4 class="fs-subtitle radio-button-title">If no explain why</h4>
+                  <input formControlName="explainWhy" type="text" placeholder="">
+              </div>
+          
+              <div class="businessLocation">
+                  <h4 class="fs-subtitle radio-button-title">What is your Business Location?</h4>
+
+                  <!-- BUSINESS LOCATION SUBCOUNTIES AND WARDS -->
+                  <div class="counties">
+                  <ng-select formControlName="subcounty" [items]="SubCountiesList" bindLabel="label" bindValue="value" placeholder="Select your SubCounty"></ng-select>
+
+                  <div *ngIf="businessIndivual.controls['subcounty'].value==='Dagoretti North'">
+                    <ng-select formControlName="ward" [items]="DagorettiNorthWardsList" bindLabel="label" bindValue="value" placeholder="Select your Ward"></ng-select>
+                  </div>
+
+                  <div *ngIf="businessIndivual.controls['subcounty'].value==='Dagoretti South'">
+                    <ng-select formControlName="ward" [items]="DagorettiSouthWardsList" bindLabel="label" bindValue="value" placeholder="Select your Ward"></ng-select>
+                  </div>
+
+                  <div *ngIf="businessIndivual.controls['subcounty'].value==='Kibra'">
+                    <ng-select formControlName="ward" [items]="KibraWardsList" bindLabel="label" bindValue="value" placeholder="Select your Ward"></ng-select>
+                  </div>
+
+                  <div *ngIf="businessIndivual.controls['subcounty'].value==='Langata'">
+                    <ng-select formControlName="ward" [items]="LangataWardsList" bindLabel="label" bindValue="value" placeholder="Select your Ward"></ng-select>
+                  </div>
+
+                  <div *ngIf="businessIndivual.controls['subcounty'].value==='Westlands'">
+                    <ng-select formControlName="ward" [items]="WestlandsWardsList" bindLabel="label" bindValue="value" placeholder="Select your Ward"></ng-select>
+                  </div>
+
+                  <div *ngIf="businessIndivual.controls['subcounty'].value==='Roysambu'">
+                    <ng-select formControlName="ward" [items]="RoysambuWardsList" bindLabel="label" bindValue="value" placeholder="Select your Ward"></ng-select>
+                  </div>
+
+                  <div *ngIf="businessIndivual.controls['subcounty'].value==='Kasarani'">
+                    <ng-select formControlName="ward" [items]="KasaraniWardsList" bindLabel="label" bindValue="value" placeholder="Select your Ward"></ng-select>
+                  </div>
+
+                  <div *ngIf="businessIndivual.controls['subcounty'].value==='Ruaraka'">
+                    <ng-select formControlName="ward" [items]="RuarakaWardsList" bindLabel="label" bindValue="value" placeholder="Select your Ward"></ng-select>
+                  </div>
+
+                  <div *ngIf="businessIndivual.controls['subcounty'].value==='Embakasi South'">
+                    <ng-select formControlName="ward" [items]="EmbakasiSouthWardsList" bindLabel="label" bindValue="value" placeholder="Select your Ward"></ng-select>
+                  </div>
+
+                  <div *ngIf="businessIndivual.controls['subcounty'].value==='Embakasi North'">
+                    <ng-select formControlName="ward" [items]="EmbakasiNorthWardsList" bindLabel="label" bindValue="value" placeholder="Select your Ward"></ng-select>
+                  </div>
+
+                  <div *ngIf="businessIndivual.controls['subcounty'].value==='Embakasi Central'">
+                    <ng-select formControlName="ward" [items]="EmbakasiCentralWardsList" bindLabel="label" bindValue="value" placeholder="Select your Ward"></ng-select>
+                  </div>
+
+                  <div *ngIf="businessIndivual.controls['subcounty'].value==='Embakasi East'">
+                    <ng-select formControlName="ward" [items]="EmbakasiEastWardsList" bindLabel="label" bindValue="value" placeholder="Select your Ward"></ng-select>
+                  </div>
+
+                  <div *ngIf="businessIndivual.controls['subcounty'].value==='Embakasi West'">
+                    <ng-select formControlName="ward" [items]="EmbakasiWestWardsList" bindLabel="label" bindValue="value" placeholder="Select your Ward"></ng-select>
+                  </div>
+
+                  <div *ngIf="businessIndivual.controls['subcounty'].value==='Makadara'">
+                    <ng-select formControlName="ward" [items]="MakadaraWardsList" bindLabel="label" bindValue="value" placeholder="Select your Ward"></ng-select>
+                  </div>
+
+
+                  <div *ngIf="businessIndivual.controls['subcounty'].value==='Kamukunji'">
+                    <ng-select formControlName="ward" [items]="KamukunjiWardsList" bindLabel="label" bindValue="value" placeholder="Select your Ward"></ng-select>
+                  </div>
+
+                  <div *ngIf="businessIndivual.controls['subcounty'].value==='Starehe'">
+                    <ng-select formControlName="ward" [items]="StareheWardsList" bindLabel="label" bindValue="value" placeholder="Select your Ward"></ng-select>
+                  </div>
+
+                  <div *ngIf="businessIndivual.controls['subcounty'].value==='Mathare'">
+                    <ng-select formControlName="ward" [items]="MathareWardsList" bindLabel="label" bindValue="value" placeholder="Select your Ward"></ng-select>
+                  </div>
+                </div>
+                <!--END OF BUSINESS LOCATION SUBCOUNTIES AND WARDS -->
+                  <input formControlName="building" type="text" placeholder="Building">
+                  <input formControlName="street" type="text" placeholder="Street">
+                  <input formControlName="landmark" type="text" placeholder="Landmark">
+              </div>
+          
+              <div class="businessSector">
+                  <h4 class="fs-subtitle radio-button-title">Sector of the business</h4>
+                  <mat-radio-group formControlName="businessSector" class="radio-group-options" aria-label="Select an option">
+                      <mat-radio-button value="retail">Retail</mat-radio-button>
+                      <mat-radio-button value="wholesale">Wholesale</mat-radio-button>
+                      <mat-radio-button value="service">Service</mat-radio-button>
+                      <mat-radio-button value="juakali">Juakali/cottage</mat-radio-button>
+                  </mat-radio-group>
+                  <div class="specifyBusiness" >
+                      <h4 class="fs-subtitle radio-button-title">What is the nature of the business (Specify)?</h4>
+                      <input formControlName="natureofBusiness" type="text" placeholder="">
+                  </div>
+
+                  <div>
+                    <h4 class="fs-subtitle radio-button-title">What is your source of raw materials?</h4>
+                    <input formControlName="rawMaterials" type="text" >
+                  </div>
+                  <div>
+                    <h4 class="fs-subtitle radio-button-title">What is your source of products?</h4>
+                    <input formControlName="sourceOfProducts" type="text">
+                  </div>
+                  <div>
+                    <h4 class="fs-subtitle radio-button-title">How do you transport them?</h4>
+                    <input formControlName="transportProducts" type="text">
+                  </div>
+
+
+                  
+              </div>
+          
+              <div class="employees">
+                  <h4 class="fs-subtitle radio-button-title">Number of employees</h4>
+                  <mat-radio-group formControlName="numbofEmployees" class="radio-group-options" aria-label="Select an option">
+                      <mat-radio-button value="1-10">1-10</mat-radio-button>
+                      <mat-radio-button value="11-50">11-50</mat-radio-button>
+                  </mat-radio-group>
+              </div>
+          
+              <div class="businessOperation">
+                  <h4 class="fs-subtitle radio-button-title">How long has your business been in operation?</h4>
+                  <mat-form-field class="matFormField">
+                      <mat-label>Choose</mat-label>
+                      <mat-select formControlName="lengthofOperations">
+                          <mat-option value="0-6 Months">0-6 Months</mat-option>
+                          <mat-option value="6-12 Months">6-12 Months</mat-option>
+                          <mat-option value="1-2 Years">1-2 Years</mat-option>
+                          <mat-option value="2-3 Years">2-3 Years</mat-option>
+                          <mat-option value="3 Years and Above">3 Years and Above</mat-option>
+                      </mat-select>
+                  </mat-form-field>
+              </div>
+          
+              <div class="businessChallenges">
+                      <div class="challenges" >
+                          <h4 class="fs-subtitle radio-button-title">What are the primary challenges your business currently
+                              faces?</h4>
+                          <mat-radio-group formControlName="challenges" class="radio-group-options" aria-label="Select an option">
+                              <mat-radio-button value="Inadequate access to affordable capital">Inadequate access to affordable capital</mat-radio-button>
+                              <mat-radio-button value="Limited market access">Limited market access</mat-radio-button>
+                              <mat-radio-button value="Inadequate business/ entrepreneur skills">Inadequate business/ entrepreneur skills</mat-radio-button>
+                              <mat-radio-button value="other">Other</mat-radio-button>
+                          </mat-radio-group>
+                      </div>
+                  <div class="inputChallenges"  *ngIf="businessIndivual.get('challenges')?.value === 'other'">
+                      <input class="matFormInput" formControlName="otherChallenges" type="text" placeholder="Other">
+                  </div>
+              </div>
+          
+          
+          
+              <div class="biasharaStimulusProgramme">
+                  <h4 class="fs-subtitle radio-button-title">Are you aware of Nairobi City County Biashara Stimulus
+                      Program?</h4>
+                  <mat-radio-group formControlName="awareofProgram" class="radio-group-options" aria-label="Select an option">
+                      <mat-radio-button value="yes">Yes</mat-radio-button>
+                      <mat-radio-button value="no">No</mat-radio-button>
+                  </mat-radio-group>
+              </div>
+          
+              <div class="sourceOfCapital">
+                  <h4 class="fs-subtitle radio-button-title">What is your source of capital?</h4>
+                  <mat-radio-group formControlName="sourceofCapital" class="radio-group-options" aria-label="Select an option">
+                      <mat-radio-button value="Own savings">Own savings</mat-radio-button>
+                      <mat-radio-button value="Family/Friend support">Family/Friend support</mat-radio-button>
+                      <mat-radio-button value="Chama">Chama</mat-radio-button>
+                      <mat-radio-button value="Loan">Loan</mat-radio-button>
+                      <mat-radio-button value="other">Other</mat-radio-button>
+                  </mat-radio-group>
+                  
+              </div>
+
+              <div *ngIf="businessIndivual.get('sourceofCapital')?.value === 'other'">
+                <input formControlName="otherCapital" type="text" placeholder="Other">
+              </div>
+              
+          
+              <div class="capitalAdequate">
+                  <h4 class="fs-subtitle radio-button-title">Is the capital adequate for expansion for your business?
+                  </h4>
+                  <mat-radio-group formControlName="capitalisAdequate" class="radio-group-options" aria-label="Select an option">
+                      <mat-radio-button value="yes">Yes</mat-radio-button>
+                      <mat-radio-button value="no">No</mat-radio-button>
+                  </mat-radio-group>
+              </div>
+          
+              <div class="marketProducts">
+                  <h4 class="fs-subtitle radio-button-title">How do you market your products?</h4>
+                  <mat-radio-group formControlName="marketingProducts" class="radio-group-options" aria-label="Select an option">
+                      <mat-radio-button value="virtual">Virtual</mat-radio-button>
+                      <mat-radio-button value="physical">Physical</mat-radio-button>
+                      <mat-radio-button value="both">Both</mat-radio-button>
+                  </mat-radio-group>
+              </div>
+          
+              <div class="targetMarkets">
+                  <h4 class="fs-subtitle radio-button-title">What are your target markets?</h4>
+                  <mat-radio-group formControlName="targetMarket" class="radio-group-options" aria-label="Select an option">
+                      <mat-radio-button value="local">Local</mat-radio-button>
+                      <mat-radio-button value="international">International</mat-radio-button>
+                  </mat-radio-group>
+              </div>
+          
+              <div class="tradeExhibition">
+                  <h4 class="fs-subtitle radio-button-title">Have you participated in any trade fair/exhibition?</h4>
+                  <mat-radio-group formControlName="participatedintradefair" class="radio-group-options"
+                      aria-label="Select an option">
+                      <mat-radio-button value="yes">Yes</mat-radio-button>
+                      <mat-radio-button value="no">No</mat-radio-button>
+                  </mat-radio-group>
+
+                  <div class="participated" *ngIf="businessIndivual.get('participatedintradefair')?.value === 'yes'">
+                      <h4 class="fs-subtitle radio-button-title">If yes:</h4>
+                      <mat-radio-group formControlName="tradefairParticipation" class="radio-group-options"
+                          aria-label="Select an option">
+                          <mat-radio-button value="self-sponsored">Self-sponsored</mat-radio-button>
+                          <mat-radio-button value="sponsored">Sponsored</mat-radio-button>
+                      </mat-radio-group>
+                  </div>
+                 
+              </div>
+          
+              <div class="capacityBuildingTraining">
+                  <h4 class="fs-subtitle radio-button-title">Have you participated in any capacity building training?</h4>
+                  <mat-radio-group formControlName="capacityBuildingTraining" class="radio-group-options"
+                      aria-label="Select an option">
+                      <mat-radio-button value="yes">Yes</mat-radio-button>
+                      <mat-radio-button value="no">No</mat-radio-button>
+                  </mat-radio-group>
+
+                  <div class="capacitybuilding" *ngIf="businessIndivual.get('capacityBuildingTraining')?.value === 'yes'" >
+                      <h4 class="fs-subtitle radio-button-title">If yes:</h4>
+                      <mat-radio-group formControlName="capacityTrainingParticipation" class="radio-group-options"
+                          aria-label="Select an option">
+                          <mat-radio-button value="self-sponsored">Self-sponsored</mat-radio-button>
+                          <mat-radio-button value="sponsored">Sponsored</mat-radio-button>
+                      </mat-radio-group>
+                  </div>
+                 
+              </div>
+          
+              <input (click)="previous()" type="button" name="previous" class="previous action-button-previous" value="Previous"/>
+              <input  (click)="next()" type="button" name="next" class="next action-button" value="Next"/>
+              <div class="powered-by"><small>powered by </small> <div><img src="/assets/DoITinKenya_logo.png" alt=""  width="100px" ></div> </div>
+          
+          </fieldset>
+        </ng-container>
+          </form>
+
+
+
+      <form [formGroup]="businessGroup" id="msform">
+        <ng-container *ngIf="step ==3" >
+          <fieldset >
+              <h2 class="fs-title">Business Specifics(Group/Organization) <span class="fs-title">*</span></h2>
+
+            <div class="organization">
+                <h4 class="fs-subtitle radio-button-title">Are you in any registered common interest group/organization?</h4>
+                <mat-radio-group formControlName="isGroupRegistered" class="radio-group-options" aria-label="Select an option">
+                    <mat-radio-button value="yes">Yes</mat-radio-button>
+                    <mat-radio-button value="no">No</mat-radio-button>
+                </mat-radio-group>
+            
+                <div class="businessGroupExixts" *ngIf="businessGroup.get('isGroupRegistered')?.value === 'yes'">
+                    <input formControlName="groupName" type="text" placeholder="Group/Organization name">
+                    <input formControlName="year_registered" type="text" placeholder="Year of registration">
+            
+                    <!-- GROUP LOCATION/ORGANIZATION COUNTIES AND WARDS -->
+                    <div class="groupLocation">
+                        <div class="counties">
+                            <h4 class="fs-subtitle radio-button-title">What is your Group/Organization Location?</h4>
+            
+                            <ng-select formControlName="subcountyGroup" [items]="SubCountiesList" bindLabel="label"
+                                bindValue="value" placeholder="Select your Sub County"></ng-select>
+            
+                            <div *ngIf="businessGroup.controls['subcountyGroup'].value==='Dagoretti North'">
+                                <ng-select formControlName="wardGroup" [items]="DagorettiNorthWardsList" bindLabel="label"
+                                    bindValue="value" placeholder="Select your Ward"></ng-select>
+                            </div>
+            
+                            <div *ngIf="businessGroup.controls['subcountyGroup'].value==='Dagoretti South'">
+                                <ng-select formControlName="wardGroup" [items]="DagorettiSouthWardsList" bindLabel="label"
+                                    bindValue="value" placeholder="Select your Ward"></ng-select>
+                            </div>
+            
+                            <div *ngIf="businessGroup.controls['subcountyGroup'].value==='Kibra'">
+                                <ng-select formControlName="wardGroup" [items]="KibraWardsList" bindLabel="label" bindValue="value"
+                                    placeholder="Select your Ward"></ng-select>
+                            </div>
+            
+                            <div *ngIf="businessGroup.controls['subcountyGroup'].value==='Langata'">
+                                <ng-select formControlName="wardGroup" [items]="LangataWardsList" bindLabel="label"
+                                    bindValue="value" placeholder="Select your Ward"></ng-select>
+                            </div>
+            
+                            <div *ngIf="businessGroup.controls['subcountyGroup'].value==='Westlands'">
+                                <ng-select formControlName="wardGroup" [items]="WestlandsWardsList" bindLabel="label"
+                                    bindValue="value" placeholder="Select your Ward"></ng-select>
+                            </div>
+            
+                            <div *ngIf="businessGroup.controls['subcountyGroup'].value==='Roysambu'">
+                                <ng-select formControlName="wardGroup" [items]="RoysambuWardsList" bindLabel="label"
+                                    bindValue="value" placeholder="Select your Ward"></ng-select>
+                            </div>
+            
+                            <div *ngIf="businessGroup.controls['subcountyGroup'].value==='Kasarani'">
+                                <ng-select formControlName="wardGroup" [items]="KasaraniWardsList" bindLabel="label"
+                                    bindValue="value" placeholder="Select your Ward"></ng-select>
+                            </div>
+            
+                            <div *ngIf="businessGroup.controls['subcountyGroup'].value==='Ruaraka'">
+                                <ng-select formControlName="wardGroup" [items]="RuarakaWardsList" bindLabel="label"
+                                    bindValue="value" placeholder="Select your Ward"></ng-select>
+                            </div>
+            
+                            <div *ngIf="businessGroup.controls['subcountyGroup'].value==='Embakasi South'">
+                                <ng-select formControlName="wardGroup" [items]="EmbakasiSouthWardsList" bindLabel="label"
+                                    bindValue="value" placeholder="Select your Ward"></ng-select>
+                            </div>
+            
+                            <div *ngIf="businessGroup.controls['subcountyGroup'].value==='Embakasi North'">
+                                <ng-select formControlName="wardGroup" [items]="EmbakasiNorthWardsList" bindLabel="label"
+                                    bindValue="value" placeholder="Select your Ward"></ng-select>
+                            </div>
+            
+                            <div *ngIf="businessGroup.controls['subcountyGroup'].value==='Embakasi Central'">
+                                <ng-select formControlName="wardGroup" [items]="EmbakasiCentralWardsList" bindLabel="label"
+                                    bindValue="value" placeholder="Select your Ward"></ng-select>
+                            </div>
+            
+                            <div *ngIf="businessGroup.controls['subcountyGroup'].value==='Embakasi East'">
+                                <ng-select formControlName="wardGroup" [items]="EmbakasiEastWardsList" bindLabel="label"
+                                    bindValue="value" placeholder="Select your Ward"></ng-select>
+                            </div>
+            
+                            <div *ngIf="businessGroup.controls['subcountyGroup'].value==='Embakasi West'">
+                                <ng-select formControlName="wardGroup" [items]="EmbakasiWestWardsList" bindLabel="label"
+                                    bindValue="value" placeholder="Select your Ward"></ng-select>
+                            </div>
+            
+                            <div *ngIf="businessGroup.controls['subcountyGroup'].value==='Makadara'">
+                                <ng-select formControlName="wardGroup" [items]="MakadaraWardsList" bindLabel="label"
+                                    bindValue="value" placeholder="Select your Ward"></ng-select>
+                            </div>
+            
+                            <div *ngIf="businessGroup.controls['subcountyGroup'].value==='Kamukunji'">
+                                <ng-select formControlName="wardGroup" [items]="KamukunjiWardsList" bindLabel="label"
+                                    bindValue="value" placeholder="Select your Ward"></ng-select>
+                            </div>
+            
+                            <div *ngIf="businessGroup.controls['subcountyGroup'].value==='Starehe'">
+                                <ng-select formControlName="wardGroup" [items]="StareheWardsList" bindLabel="label"
+                                    bindValue="value" placeholder="Select your Ward"></ng-select>
+                            </div>
+            
+                            <div *ngIf="businessGroup.controls['subcountyGroup'].value==='Mathare'">
+                                <ng-select formControlName="wardGroup" [items]="MathareWardsList" bindLabel="label"
+                                    bindValue="value" placeholder="Select your Ward"></ng-select>
+                            </div>
+                        </div>
+                        <!-- END OF GROUP LOCATION/ORGANIZATION COUNTIES AND WARDS -->
+                        <input formControlName="GroupBuilding" type="text" placeholder="Building">
+                        <input formControlName="GroupStreet" type="text" placeholder="Street">
+                        <input formControlName="GroupLandmark" type="text" placeholder="Landmark">
+                    </div>
+            
+                    <input formControlName="chairpersonsContact" type="number" placeholder="Chairperson’s Contact Number">
+                    <input formControlName="numberofGroupmemb" type="number" placeholder="Number of group members">
+            
+                    <div>
+                        <h4 class="fs-subtitle radio-button-title">Upload the list of the members</h4>
+                        <input formControlName="listOfGroupmembers" type="file" class="file-upload"
+                            (change)="handleFileupload($event,'listOfGroupmembers')">
+                    </div>
+            
+                    <div>
+                        <h4 class="fs-subtitle radio-button-title">Attach Group Constitution</h4>
+                        <input formControlName="groupConsitution" type="file" class="file-upload"
+                            (change)="handleFileupload($event,'groupConsitution')">
+                    </div>
+            
+                    <div>
+                        <h4 class="fs-subtitle radio-button-title">Attach Certificate of registration</h4>
+                        <input formControlName="groupRegCert" type="file" class="file-upload"
+                            (change)="handleFileupload($event,'groupRegCert')">
+                        <input formControlName="groupRegCertNo" type="text" placeholder="Certificate Number">
+                    </div>
+            
+            
+            
+            
+                    <div class="businessActivities">
+                        <h4 class="more-text">Group activity/Nature of business activities of the group members</h4>
+                        <div class="GroupActivities checkboxContainer">
+            
+                            <!-- checkboxes group activities -->
+                            <ng-select formControlName="groupActivities" [multiple]="true" [closeOnSelect]="false"
+                                [searchable]="true" (change)="onGroupActivitiesChange($event)"
+                                placeholder="Select business activity">
+                                <ng-option *ngFor="let option of groupActivitiesOptions" [value]="option.id">{{ option.name
+                                    }}</ng-option>
+                            </ng-select>
+                            <!--end of checkboxes group activities -->
+                        </div>
+            
+                        <div class="matFormInput" *ngIf="showOtherGroupActivities">
+                            <h4 class="more-text radio-button-title">What are other group activities</h4>
+                            <input formControlName="othergroupActivites" type="text">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+              <div class="businessOutCome">
+                  <h4 class="more-text">What positive outcomes or changes do you expect for your business as a beneficiary of Biashara Stimulus Program?</h4>
+                  <div class="checkboxContainer">
+                       <!-- checkbox box outcomes -->
+              <ng-select formControlName="expectations" [multiple]="true" [closeOnSelect]="false" [searchable]="true"  (change)="onExpectationChange($event)" placeholder="Select business outcome">
+                  <ng-option *ngFor="let option of businessOutcomeOptions" [value]="option.id">{{ option.name }}</ng-option>
+              </ng-select>
+                      <!--end of checkboxes business outcome -->
+                  </div>
+                  <div class="matFormInput" *ngIf="showOtherOutcomeInputs">
+                      <h4 class="radio-button-title">What are other positive outcomes</h4>
+                      <input formControlName="otherExpectations" type="text">
+                  </div>
+              </div>
+
+              <div class="businessComments">
+                  <h4 class="radio-button-title">Do you have any additional comments, suggestions, or concerns regarding Biashara Stimulus program?</h4>
+                  <textarea formControlName="comments" name="" id="" cols="10" rows="5"></textarea>
+              </div>
+              
+              <!-- <div class="mt-3 mb-4 text-start">
+                <button class="btn btn-sm btn-info p-2" (click)="getPosition()"><i class="fa fa-map-marker" aria-hidden="true"></i> Share my location</button>
+              </div> -->
+
+              
+              <div>
+                <p>   
+                By submitting this form <span style="font-weight: bold; color:#003d1e">You have </span>accepted Biashara Stimulus Program   <a routerLink="/terms-and-conditions"  style="color:orange" >Terms and conditions</a> 
+                </p>
+            </div>
+               
+              
+          <input (click)="previous()" type="button" name="previous" class="previous action-button-previous" value="Previous"/>      
+          <input (click)="onSubmit()" type="submit" name="submit" class="submit action-submit" value="Submit"/>
+
+          <div class="powered-by"><small>powered by </small> <div><img src="/assets/DoITinKenya_logo.png" alt=""  width="100px" ></div> </div>
+          </fieldset>
+        </ng-container>
+
+      </form>
+  </div>
+</div>
+</div>

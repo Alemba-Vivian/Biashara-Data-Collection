@@ -1,0 +1,59 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container-holder{
+  background-color: #003d1e;
+  // width: 1140px;
+  // margin: 0;
+  // padding: 40px;
+  width: 100%;
+  padding: 20px;
+}
+
+
+
+
+
+.msform
+{
+  background: #e6e5e5; 
+  border: 0 none;
+  border-radius: 0px;
+  box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+  padding: 20px 30px;
+  color: black;
+  /* box-sizing: border-box; */
+  width: 80%;
+  margin: 0 10%;
+  /*stacking fieldsets above each other*/
+  position: relative;
+}
+// h3
+// {
+//     font-display: bold;
+// }
+
+.fs-title {
+  font-size: 18px;
+  color: green;
+  font-weight: bold;
+  text-decoration: underline;
+  letter-spacing: 2px;
+  margin-bottom: 5px;
+  margin-top: 8px;
+}
+
+.fs-subtitle {
+  font-weight: normal;
+  font-size: 15px;
+  letter-spacing: 2px;
+  color: green;
+  text-decoration: underline;
+  font-weight: bold;
+  margin-bottom: 5px;
+  margin-top: 8px;
+ 
+}
